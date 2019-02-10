@@ -1,0 +1,16 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/BaseProject/obj/
+/Common/obj/
+/DataLayer/obj/
+/Entity/obj/
+/ServiceLayer/obj/
+/BaseProject/bin/
+/Common/bin/
+/DataLayer/bin/
+/Entity/bin/
+/ServiceLayer/bin/
+
+/.vs/

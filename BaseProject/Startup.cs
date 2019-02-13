@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using ServiceLayer;
 
 namespace BaseProject
@@ -30,6 +25,14 @@ namespace BaseProject
 
 
 			//sso authentication
+
+			services.AddAuthentication(defaultScheme: IdentityServerAuthenticationDefaults.AuthenticationScheme)
+			   .AddIdentityServerAuthentication(options =>
+			   {
+				   options.Authority = Configuration["AuthorityBaseAddress"];
+				   options.ApiName = "apiBase";
+				   options.ApiSecret = "wtxSecret";
+			   });
 
 
 

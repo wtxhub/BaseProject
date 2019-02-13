@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ServiceLayer.Manager;
 
@@ -17,7 +18,7 @@ namespace BaseProject.Controllers
 		}
 
 
-
+		[Authorize]
 		[HttpGet]
 		public ActionResult<string> Get ()
 		{
